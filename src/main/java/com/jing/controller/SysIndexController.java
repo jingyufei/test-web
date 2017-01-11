@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.baoyun.base.config.client.annotation.ZookeeperValue;
 import com.jing.entity.User;
 import com.jing.response.ResponseResult;
 import com.jing.service.UserService;
@@ -24,11 +25,15 @@ public class SysIndexController {
 	
 	private static Logger logger = LoggerFactory.getLogger(SysIndexController.class);
 	
+	@ZookeeperValue(key= "jdbc.url")
+	private String jdbcurl;
+	
 	@Autowired
 	private UserService userService;
 
     @RequestMapping("/sysindex.html")
     public String index(Model model,HttpServletRequest request, HttpServletResponse response) {
+    	System.out.println(jdbcurl);
         User user = userService.getUser();
         model.addAttribute("user", user);
         System.out.println(user);
