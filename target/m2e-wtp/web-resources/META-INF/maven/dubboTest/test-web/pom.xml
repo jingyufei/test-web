@@ -19,8 +19,13 @@
   	 <dependency>
 		<groupId>dubboTest</groupId>
 		<artifactId>test.common</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 		</dependency>
+	    <dependency>
+		<groupId>com.jing</groupId>
+		<artifactId>config-client</artifactId>
+		<version>1.0.1</version>
+		</dependency> 
   </dependencies>
   
   <build>
